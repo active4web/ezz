@@ -1,3 +1,6 @@
+import 'package:ezz/presintation/registeration/sign_up/signup_screen.dart';
+import 'package:ezz/shared/defaults.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -95,32 +98,93 @@ class LoginScreen extends StatelessWidget {
                    ),
                  ),
                  SizedBox(height: 30,),
-                 Container(
-                   height: 50,
-                   decoration: BoxDecoration(
-                     gradient: LinearGradient(
-                     begin: Alignment.topCenter,
-                     end: Alignment.bottomCenter,
-                     colors: [
-                       Color(0xff033C57),
-                       Color(0xff010B19)
-                     ])
-                   ),
-                   child: Center(child: Text(
-                       'دخول',
-                     style: TextStyle(color: Colors.white,
-                       fontSize: 16
+                 GestureDetector(
+                   onTap: (){},
+                   child: Container(
+                     height: 50,
+                     decoration: BoxDecoration(
+                       gradient: LinearGradient(
+                       begin: Alignment.topCenter,
+                       end: Alignment.bottomCenter,
+                       colors: [
+                         Color(0xff033C57),
+                         Color(0xff010B19)
+                       ])
                      ),
-                   ),),
+                     child: Center(child: Text(
+                         'دخول',
+                       style: TextStyle(color: Colors.white,
+                         fontSize: 16
+                       ),
+                     ),),
+                   ),
                  ),
                  SizedBox(height: 10,),
                  Row(textDirection: TextDirection.rtl,
                  children: [
                    Text('نسيت كلمة المرور الخاصة بك ؟',style: TextStyle(
                      color: Colors.grey,
-
                    ),textDirection: TextDirection.rtl,)
-                 ],)
+                 ],),
+                 SizedBox(height: 20,),
+                 Text('او يمكنك الدخول',textDirection: TextDirection.rtl,
+                 style: TextStyle(
+                   color: Colors.black54,
+                   fontSize: 16,
+                   fontFamily: 'Cairo',
+                 ),
+                 ),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     Container(
+                       width: 90,
+                       height: 90,
+                       decoration: BoxDecoration(
+                           image: DecorationImage(
+                               image: AssetImage('assets/images/facebook.png')
+                           )
+                       ),
+                     ),
+                     Container(
+                       width: 90,
+                       height: 90,
+                       decoration: BoxDecoration(
+                         image: DecorationImage(
+                           image: AssetImage('assets/images/google.png')
+                         )
+                       ),
+                     ),
+                     Container(
+                       width: 90,
+                       height: 90,
+                       decoration: BoxDecoration(
+                           image: DecorationImage(
+                               image: AssetImage('assets/images/twiter.png')
+                           )
+                       ),
+                     ),
+                   ],
+                 ),
+                 Row(
+                   textDirection: TextDirection.rtl,
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     Text('ليس لديك حساب ؟',textDirection: TextDirection.rtl,
+                     style: TextStyle(
+                       color: Colors.grey
+                     ),),
+                     TextButton(
+                       child:Text('تسجيل جديد',style: TextStyle(
+                         color: Colors.red,
+                         fontWeight: FontWeight.bold
+                       ),),
+                       onPressed: (){
+                         navigateTo(context, SignupScreen());
+                       },
+                     )
+                   ],
+                 )
                ],
              ),
            )
