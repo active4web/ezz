@@ -1,3 +1,4 @@
+import 'package:ezz/presintation/registeration/on_boarding/on_boarding_screen.dart';
 import 'package:ezz/presintation/registeration/sign_up/signup_screen.dart';
 import 'package:ezz/shared/defaults.dart';
 import 'package:flutter/cupertino.dart';
@@ -99,7 +100,9 @@ class LoginScreen extends StatelessWidget {
                  ),
                  SizedBox(height: 30,),
                  GestureDetector(
-                   onTap: (){},
+                   onTap: (){
+                     navigateAndFinish(context, OnBoardingScreen());
+                   },
                    child: Container(
                      height: 50,
                      decoration: BoxDecoration(
